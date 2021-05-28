@@ -175,7 +175,7 @@ int main(){
 
 void MusteriSayisi()
 {
-	FILE *kisisayisi=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\KisiSayisi\\kisisayisi.txt","w+");
+	FILE *kisisayisi=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\KisiSayisi\\kisisayisi.txt","w+");
 	int i;
 	for(i=0;i<80;i++){printf("_");}printf("\n");
 	printf("      PANDEMİ KOŞULLARI İÇİN AVM YOĞUNLUĞU\n");
@@ -205,7 +205,7 @@ void yogunlukHesap()
 	float gunlukortaHepsi=0;
 	float gunlukortHafta=0;
 	
-	FILE *kisisayisi=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\KisiSayisi\\kisisayisi.txt","r");
+	FILE *kisisayisi=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\KisiSayisi\\kisisayisi.txt","r");
 	if(kisisayisi==NULL){
 		printf("\n\nMAĞAZA HENÜZ AÇILMAMIŞTIR.\nYayın Akışını Takip edebilmek için Mağaza Yönetimiyle iletişime geçiniz.\nAna Menüye tekrar yönlendiriliyorsunuz...\n");
 		sleep(5);
@@ -299,7 +299,7 @@ void KampanyaEkle(){
 	printf("\nKampanya kodunu oluşturun: ");
 		scanf("%s",kampanya.kampanyakodu);
    		strcat(kampanya.kampanyakodu,".txt");
-    	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\";
+    	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\";
     	strcat(dosyauzantisi,kampanya.kampanyakodu);
 		FILE *kampanyadosya=fopen(dosyauzantisi,"r");
 		if(kampanyadosya==NULL){
@@ -318,12 +318,12 @@ void KampanyaEkle(){
 			printf("\nKampanyanız oluşturulmuştur!\n Ana Menüye yönlendiriliyorsunuz...\n\n");
 			
 			if(i==1){
-				FILE *kampanyaozel=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\KampanyaBilgiOzel.txt","a+");
+				FILE *kampanyaozel=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\KampanyaBilgiOzel.txt","a+");
 				fwrite(&kampanya,sizeof(kampanya),1,kampanyaozel);
 				fclose(kampanyaozel);
 			}
 			else if(i==2){
-				FILE *kampanyagenel=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\KampanyaBilgiGenel.txt","a+");
+				FILE *kampanyagenel=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\KampanyaBilgiGenel.txt","a+");
 				fwrite(&kampanya,sizeof(kampanya),1,kampanyagenel);
 				fclose(kampanyagenel);
 			}
@@ -345,7 +345,7 @@ void KampanyaEkle(){
 
 
 void KampanyaGoruntulemeMusteri(){
-	FILE *kampanyagenel=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\KampanyaBilgiGenel.txt","r");
+	FILE *kampanyagenel=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\KampanyaBilgiGenel.txt","r");
 	if(kampanyagenel==NULL){
 		printf("Henüz bir kampanya bulunmamaktadır.\nAna Menüye Yönlendiriliyorsunuz...\n");
 		fclose(kampanyagenel);
@@ -371,8 +371,8 @@ void KampanyaGoruntulemeMusteri(){
 
 void KampanyaGoruntulemePersonel(){
 	int i;
-	FILE *kampanyaozel=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\KampanyaBilgiOzel.txt","r");
-	FILE *kampanyagenel=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\KampanyaBilgiGenel.txt","r");
+	FILE *kampanyaozel=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\KampanyaBilgiOzel.txt","r");
+	FILE *kampanyagenel=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\KampanyaBilgiGenel.txt","r");
 	if(kampanyaozel==NULL && kampanyagenel==NULL){
 		printf("Henüz bir kampanya bulunmamaktadır.\nAna Menüye Yönlendiriliyorsunuz...\n");
 		fclose(kampanyaozel);
@@ -441,8 +441,8 @@ void indirkartSayfa()
 	char kullaniciC[20];
 	char kullaniciM[20];
 	char kullaniciP[20];
-	char dosyauzantisiM[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\";
-	char dosyauzantisiP[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\";
+	char dosyauzantisiM[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\";
+	char dosyauzantisiP[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\";
     
     for(i=0;i<50;i++){ printf("_");} printf("\n");
 	printf("\nAVM KART SAYFASINA HOŞ GELDİNİZ\n\n");
@@ -583,7 +583,7 @@ void YonetimAnasayfa(){
 			printf("\nKullanıcı Adınızı Giriniz: ");
 			scanf("%s",yon.kullanici_adi);
 			strcat(yon.kullanici_adi,".txt");
-			char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Yonetim\\"; 
+			char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Yonetim\\"; 
 			strcat(dosyauzantisi,yon.kullanici_adi);
 			FILE *yonetim = fopen(dosyauzantisi,"r");
 			if(yonetim==NULL){
@@ -664,7 +664,7 @@ void YonetimKayit(){
     printf("KULLANICI ADI GİRİNİZ : ");
     scanf("%s",yon.kullanici_adi);
     strcat(yon.kullanici_adi,".txt");
-    char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Yonetim\\";
+    char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Yonetim\\";
     strcat(dosyauzantisi,yon.kullanici_adi);
 	FILE *yonetimd=fopen(dosyauzantisi,"r");
 	    if(yonetimd==NULL){
@@ -712,7 +712,7 @@ void YonetimKayit(){
 void YonetimKayitSil(){
 	int a=0;
 	char kullanici[20],sifre[10];
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Yonetim\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Yonetim\\";
     	printf("KULLANICI ADI GİRİNİZ:");
     	scanf("%s",kullanici);
     	strcat(kullanici,".txt");
@@ -797,7 +797,7 @@ void MusteriGiris(){
 	printf("şifre");
 	fflush(stdin);
 	gets(sifre2);
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\";
     strcat(kullaniciadi2,".txt");
     strcat(dosyauzantisi,kullaniciadi2);
 	FILE *dd=fopen(dosyauzantisi,"r");
@@ -828,7 +828,7 @@ void MusteriGiris(){
 	
 }
 void SifremiUnuttum(){
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\";
 	char  kullanici[10],alternatif[20];
 	printf("KULLANICI ADI GİRİNİZ:");
     scanf("%s",kullanici);
@@ -860,14 +860,14 @@ void SifremiUnuttum(){
 void MusteriKayitSil(){
 	int a=0;
 	char kullanici[20],sifre[10];
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\";
     printf("KULLANICI ADI GİRİNİZ:");
     scanf("%s",kullanici);
     strcat(kullanici,".txt");
     strcat(dosyauzantisi,kullanici);
     FILE *dd=fopen(dosyauzantisi,"r");
-    FILE *must=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\müşteriler.txt","r");
-    FILE *temp=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\geçici.txt","a");
+    FILE *must=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\müşteriler.txt","r");
+    FILE *temp=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\geçici.txt","a");
 	 if(dd==NULL||must==NULL){
 	 	printf("KAYIT BULUNMAMAKTADIR.");
 	 }
@@ -894,8 +894,8 @@ void MusteriKayitSil(){
 		fclose(must);
 		fclose(temp);
 		remove(dosyauzantisi);
-	    remove("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\müşteriler.txt");
-	    rename("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\geçici.txt","C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\müşteriler.txt");
+	    remove("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\müşteriler.txt");
+	    rename("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\geçici.txt","C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\müşteriler.txt");
 	    }
 	  fclose(dd);
 	  sleep(2);
@@ -956,13 +956,13 @@ void MusteriKayit(){
     printf("KULLANICI ADI GİRİNİZ:");
     scanf("%s",cust.kullanici_adi);
     strcat(cust.kullanici_adi,".txt");
-    char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\";
+    char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\";
     strcat(dosyauzantisi,cust.kullanici_adi);
 	FILE *dd=fopen(dosyauzantisi,"r");
 	    if(dd==NULL){
 	    	fclose(dd);
 		     FILE *ff=fopen(dosyauzantisi,"a+");
-		     FILE *must=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\müşteriler.txt","a+");
+		     FILE *must=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\müşteriler.txt","a+");
 		     fwrite(&cust,sizeof(cust),1,must);
 		     fclose(must);
 	    	do{
@@ -1008,7 +1008,7 @@ void MusteriBilgileri(char ARA[]){
 	char kullanici2[20];
 	for(i=0;i<100;i++){printf("_");}
 	printf("\n");
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\";
 	printf("KULLANICI ADI GİRİNİZ:");
     scanf("%s",kullanici2);
     strcat(kullanici2,".txt");
@@ -1050,8 +1050,8 @@ void MusteriBilgileri(char ARA[]){
 void MagazaMusterileri(){
 	system("cls");
 	int i;
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\";
-    FILE *must=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\müşteriler.txt","r");
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\";
+    FILE *must=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\müşteriler.txt","r");
 	printf("%60sTÜM MÜŞTERİLER(Müşteri dosyaları)\n","");
 	for(i=0;i<120;i++){printf("_");}printf("\n");
 	while(fread(&cust,sizeof(cust),1,must)==1){
@@ -1107,9 +1107,9 @@ void SikayetVeOneriGoster(){
 	for(i=0;i<50;i++){ printf("_");} printf("\n");
     printf("[1]ŞİKAYET\n[2]ÖNERİLER\n");
     printf("görüntülemek istediğiniz seçeneği seçiniz:");scanf("%d",&secim);
-	char dosyauzantisi1[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\sikayet.txt";
+	char dosyauzantisi1[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\sikayet.txt";
 	FILE *sikayet=fopen(dosyauzantisi1,"r");
-	char dosyauzantisi2[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\oneri.txt";
+	char dosyauzantisi2[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\oneri.txt";
 	FILE *oneri=fopen(dosyauzantisi2,"r");
     switch(secim){
 		case 1:
@@ -1143,7 +1143,7 @@ void SikayetVeOneri(){
 	int i;
 	printf("\n     ŞİKAYET VE ÖNERİLER\n");
 	for(i=0;i<50;i++){ printf("_");} printf("\n");
-    char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\";
+    char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\";
 	printf("[1]ŞİKAYET\n[2]ÖNERİLER\n");
 	printf("İşlem seçimi:");scanf("%d",&secim);
 	switch (secim){
@@ -1264,7 +1264,7 @@ void PersonelGiris(){
 	printf("Şifre : ");
 	fflush(stdin);
 	gets(sifre2);
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\";
     strcat(kullaniciadi2,".txt");
     strcat(dosyauzantisi,kullaniciadi2);
 	FILE *dosya=fopen(dosyauzantisi,"r");
@@ -1297,7 +1297,7 @@ void PersonelGiris(){
 void SifremiUnuttum2(){
 	int i;
 	system("cls");
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\";
 	char  kullanici[10],alternatif[20];
 	printf("\n         ŞİFREMİ GÖRÜNTÜLE\n");
 	for(i=0;i<50;i++){printf("_");}printf("\n");
@@ -1334,7 +1334,7 @@ void PersonelKayitSil(){
 	int i;
 	system("cls");
 	char kullanici[20],sifre[10];
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\";
 	for(i=0;i<50;i++){printf("_");}printf("\n");
 	printf("        PERSONEL KAYIT SİLME EKRANI\n");
 	for(i=0;i<50;i++){printf("_");}printf("\n");
@@ -1344,8 +1344,8 @@ void PersonelKayitSil(){
     strcat(kullanici,".txt");
     strcat(dosyauzantisi,kullanici);
     FILE *dosya=fopen(dosyauzantisi,"r");
-    FILE *person=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\calisanlar.txt","r");
-    FILE *gecici=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\gecicii.txt","a");
+    FILE *person=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\calisanlar.txt","r");
+    FILE *gecici=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\gecicii.txt","a");
 	 if(dosya==NULL||gecici==NULL){
 	 	printf("KAYIT BULUNMAMAKTADIR.");
 	 }
@@ -1371,8 +1371,8 @@ void PersonelKayitSil(){
 		fclose(person);
 		fclose(gecici);
 		remove(dosyauzantisi);
-	    remove("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\calisanlar.txt");
-	    rename("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\gecicii.txt","C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\calisanlar.txt");
+	    remove("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\calisanlar.txt");
+	    rename("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\gecicii.txt","C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\calisanlar.txt");
 	    }
 	  fclose(dosya);
 	  sleep(2);
@@ -1439,7 +1439,7 @@ void PersonelKayit(){
 	printf("PERSONELİN ÇALIŞTIĞI MAĞAZA KİMLİĞİ: ");
 	scanf("%s",Boyut.Magazakimlik);
     strcat(Boyut.Magazakimlik,".txt");
-  	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Magazalar\\";
+  	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Magazalar\\";
     strcat(dosyauzantisi,Boyut.Magazakimlik);	
 	FILE *magaza =fopen(dosyauzantisi,"r");
 	if(magaza==NULL){
@@ -1454,13 +1454,13 @@ void PersonelKayit(){
     printf("KULLANICI ADI GİRİNİZ : ");
     scanf("%s",per.kullanici_adi);
     strcat(per.kullanici_adi,".txt");
-    char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\";
+    char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\";
     strcat(dosyauzantisi,per.kullanici_adi);
 	FILE *dosya=fopen(dosyauzantisi,"r");
 	    if(dosya==NULL){
 	    	fclose(dosya);
 		     FILE *fdosya=fopen(dosyauzantisi,"a+");
-		     FILE *person=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\calisanlar.txt","a+");
+		     FILE *person=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\calisanlar.txt","a+");
 	         fwrite(&per,sizeof(per),1,person);
 		     fclose(person);
 	    	do{
@@ -1513,7 +1513,7 @@ void PersonelBilgileri(char ARA[]){
 	printf("          PERSONEL BİLGİSİ\n");
 	for(i=0;i<50;i++){printf("_");}printf("\n");
 	char kullanici2[20];
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\";
 	printf("KULLANICI ADI GİRİNİZ:");
     scanf("%s",kullanici2);
     for(i=0;i<100;i++){printf("_");}
@@ -1566,7 +1566,7 @@ void PersonelBilgileri(char ARA[]){
 void izingunleri(){
 	system("cls");
 	int i;
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\";
 	for(i=0;i<50;i++){printf("_");}printf("\n");
 	printf("            PERSONEL İZİN GİRİŞİ\n");
 	for(i=0;i<50;i++){printf("_");}printf("\n");
@@ -1623,8 +1623,8 @@ void izingunleri(){
 void MagazaPersonelleri(){
 	system("cls");
 	int i;
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\";
-    FILE *person=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\calisanlar.txt","r");
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\";
+    FILE *person=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\calisanlar.txt","r");
     for(i=0;i<50;i++){printf("_");}printf("\n");
 	printf("    TÜM PERSONELLER(Personel dosyaları)   \n");
 	for(i=0;i<50;i++){printf("_");}printf("\n");
@@ -1691,9 +1691,9 @@ void SikayetVeOneriGoster2(){
 	printf("    PERSONEL ŞİKAYET VE ÖNERİ BİLDİLERİ\n________________________________________________\n");
     printf("\n[1]ŞİKAYET\t[2]ÖNERİLER\n\n");
     printf("görüntülemek istediğiniz seçeneği seçiniz:");scanf("%d",&secim);
-	char dosyauzantisi1[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\sikayet.txt";
+	char dosyauzantisi1[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\sikayet.txt";
 	FILE *sikayet=fopen(dosyauzantisi1,"r");
-	char dosyauzantisi2[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\oneri.txt";
+	char dosyauzantisi2[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\oneri.txt";
 	FILE *oneri=fopen(dosyauzantisi2,"r");
     switch(secim){
 		case 1:
@@ -1727,7 +1727,7 @@ void SikayetVeOneriGoster2(){
 void SikayetVeOneri2(){
 	system("cls");
 	printf("\n PERSONEL ŞİKAYET ÖNERİ SAYFASI\n______________________________________________\n");
-    char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\";
+    char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\";
 	printf("[1]ŞİKAYET\t[2]ÖNERİLER\n\n");
 	printf("İşlem seçimi:");
 	scanf("%d",&secim);
@@ -1763,7 +1763,7 @@ void SikayetVeOneri2(){
 void KampanyaSil(){
 	int i;
 	char kampanyakodu[50];
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\";
 	for(i=0;i<100;i++){ printf("_");} printf("\n");
     printf("\nKampanyayı Silmek İçin Kampanya Kodunu Tekrar Giriniz: ");
     scanf("%s",kampanyakodu);
@@ -1780,27 +1780,27 @@ void KampanyaSil(){
 		printf("[1] Kampanya Genele Açık ise\n[2] Personeller için ise\nGiriniz: ");
 		scanf("%d",&secim);
 		if(secim==1){
-			FILE *kampanyagenel=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\KampanyaBilgiGenel.txt","r");
-			FILE *temp1=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\geçici.txt","a");
+			FILE *kampanyagenel=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\KampanyaBilgiGenel.txt","r");
+			FILE *temp1=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\geçici.txt","a");
 			if(strcmp(kampanyakodu,kampanya.kampanyakodu)!=0){
 				fwrite(&kampanya,sizeof(kampanya),1,temp1);
 				fclose(temp1);
 				fclose(kampanyagenel);
 				remove(dosyauzantisi);
-				remove("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\KampanyaBilgiGenel.txt");
-				rename("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\geçici.txt","C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\KampanyaBilgiGenel.txt");
+				remove("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\KampanyaBilgiGenel.txt");
+				rename("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\geçici.txt","C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\KampanyaBilgiGenel.txt");
 				}
 		}
 		else if(secim==2){
-			FILE *kampanyaozel=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\KampanyaBilgiOzel.txt","r");
-			FILE *temp2=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\geçicii.txt","a");
+			FILE *kampanyaozel=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\KampanyaBilgiOzel.txt","r");
+			FILE *temp2=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\geçicii.txt","a");
 			if(strcmp(kampanyakodu,kampanya.kampanyakodu)!=0){
 				fwrite(&kampanya,sizeof(kampanya),1,temp2);
 				fclose(temp2);
 				fclose(kampanyaozel);	
 				remove(dosyauzantisi);
-				remove("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\KampanyaBilgiOzel.txt");
-				rename("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\geçici.txt","C:\\Users\\ŞEYMA\\Desktop\\AVM\\Kampanyalar\\KampanyaBilgiOzel.txt");
+				remove("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\KampanyaBilgiOzel.txt");
+				rename("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\geçici.txt","C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Kampanyalar\\KampanyaBilgiOzel.txt");
 				}
 		}
 		}			
@@ -1845,7 +1845,7 @@ void tatiller(){
 void isiklandirma(){
 	system("cls");
 	FILE *tatildosya=fopen("tatiller.txt","r");
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Magazalar\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Magazalar\\";
 	strcat(dosyauzantisi,Boyut.Magazakimlik);
 	FILE *id=fopen(dosyauzantisi,"wb+");
 	
@@ -1912,7 +1912,7 @@ void isiklandirma(){
 	
 void MagazaYapilandirma(){
 	system("cls");
-	FILE *yapidosya=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Magazalar\\magazayapilandirma.txt","w+");
+	FILE *yapidosya=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Magazalar\\magazayapilandirma.txt","w+");
 	int i, n;
 	for(i=0;i<100;i++){printf("_");}printf("\n");
 	printf("\n      MAĞAZA YAPILANDIRMA SAYFASI \n");
@@ -1948,7 +1948,7 @@ void MagazaKayit(){
 	printf("Mağazanıza Kimlik Giriniz\n(Mağaza kimliği oluştururken ingilizce harfler kullanınız)\nKimlik Oluşturunuz: ");
 	scanf("%s",Boyut.Magazakimlik);
 	strcat(Boyut.Magazakimlik,".txt");
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Magazalar\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Magazalar\\";
 	strcat(dosyauzantisi,Boyut.Magazakimlik);
 	FILE *magaza = fopen(dosyauzantisi,"r");
 	if(magaza==NULL){
@@ -1972,10 +1972,10 @@ void MagazaKayit(){
     
 void MagazaKiralama(){
 	system("cls");
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Magazalar\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Magazalar\\";
 	strcat(dosyauzantisi,Boyut.Magazakimlik);
 	FILE *magaza=fopen(dosyauzantisi,"wb+");
-	FILE *yapidosya=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM\\Magazalar\\magazayapilandirma.txt","r");
+	FILE *yapidosya=fopen("C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Magazalar\\magazayapilandirma.txt","r");
 	if(yapidosya==NULL){
 		printf("\nMağaza Yapılandırması yapılmamıştır. Yönetim ile iletişime geçiniz!\n\n");
 		fclose(magaza);
@@ -2100,7 +2100,7 @@ void MagazayiGoster(){
 	printf("\nMağaza Kimliğinizi Giriniz: ");
 	scanf("%s",Boyut.Magazakimlik);
 	strcat(Boyut.Magazakimlik,".txt");
-	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM\\Magazalar\\";
+	char dosyauzantisi[100]="C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Magazalar\\";
 	strcat(dosyauzantisi,Boyut.Magazakimlik);
 	FILE *magaza = fopen(dosyauzantisi,"r");
 	FILE *id=fopen(dosyauzantisi,"r");
@@ -2248,7 +2248,7 @@ void puanGirdi(){
 		printf("\nMüşterinin Kullanıcı Adını Girin: ");
 		scanf("%s",kullaniciKont);
 		strcat(kullaniciKont,".txt");
-		strcpy(dosyauzantisi,"C:\\Users\\ŞEYMA\\Desktop\\AVM\\Musteriler\\");
+		strcpy(dosyauzantisi,"C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Musteriler\\");
 		strcat(dosyauzantisi,kullaniciKont);
 		fflush(stdin);
 		dd=fopen(dosyauzantisi,"r+");
@@ -2263,7 +2263,7 @@ void puanGirdi(){
 		printf("\nPersonelin Kullanıcı Adını Girin: ");
 		scanf("%s",kullaniciKont);
 		strcat(kullaniciKont,".txt");
-		strcpy(dosyauzantisi,"C:\\Users\\ŞEYMA\\Desktop\\AVM\\Personeller\\");
+		strcpy(dosyauzantisi,"C:\\Users\\ŞEYMA\\Desktop\\AVM-Otomasyon-Projesi\\AVM\\Personeller\\");
 		strcat(dosyauzantisi,kullaniciKont);
 		fflush(stdin);
 		dd=fopen(dosyauzantisi,"r+");
